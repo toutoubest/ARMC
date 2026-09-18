@@ -60,7 +60,7 @@ for scenario in ["gaussian_dense", "t3_dense", "contaminated_dense"]:
         dependence_current_v3_direct_clip9=dep_direct_clip9,
         dependence_candidate_clip_then_mult=dep_candidates,
     )
-    print(f"=== {scenario} ===")
+    print(f" {scenario} ")
     print(f"  |Z| quantiles (0.9/0.95/0.99/0.999): {[round(stage0_q[q],3) for q in [0.9,0.95,0.99,0.999]]}  max={stage0_max:.2f}")
     print(f"  raw Z^2 mean={stage1['mean']:.3f}  q99={stage1['q'][2]:.2f}  q999={stage1['q'][3]:.2f}  max={stage1['max']:.1f}")
     print(f"  current v3 (clip z at 3, i.e. c_scale=9) mean={stage2_c9[0]:.4f} std={stage2_c9[1]:.4f}")
@@ -71,11 +71,11 @@ for scenario in ["gaussian_dense", "t3_dense", "contaminated_dense"]:
     for c in [1.345, 1.5, 2.0, 2.5, 3.0]:
         print(f"    dep candidate (clip-then-mult) c={c}: mean={dep_candidates[c]['mean']:.4f} std={dep_candidates[c]['std']:.4f}")
 
-print("\n=== RELATIVE INFLATION (t3 or contam mean / gaussian mean) ===")
+print("\n RELATIVE INFLATION (t3 or contam mean / gaussian mean) ")
 g = results["gaussian_dense"]
 for scen in ["t3_dense", "contaminated_dense"]:
     r = results[scen]
-    print(f"\n-- {scen} vs gaussian_dense --")
+    print(f"\n {scen} vs gaussian_dense ")
     print(f"  stage1 raw Z^2 mean ratio: {r['stage1_raw_Zsq']['mean']/g['stage1_raw_Zsq']['mean']:.3f}")
     print(f"  current v3 clip(c=3) mean ratio: {r['stage2_current_v3_clip_c3']['mean']/g['stage2_current_v3_clip_c3']['mean']:.3f}")
     for c in [1.345, 1.5, 2.0, 2.5, 3.0]:
