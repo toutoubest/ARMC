@@ -1,6 +1,6 @@
 # Stress tests G (gradual drift), H (rarer/larger contamination), and
 # I (combined small location + dependence shift), each reusing the
-# frozen Experiment A profile+threshold for its base scenario.
+# Experiment A profile+threshold for its base scenario.
 import numpy as np, csv, time
 from core_v3 import generate_batch
 from production_common import HP, T, TAU, N_TRAIN, RHO, SCENARIOS, METHODS, seeds_for, scen_kwargs
@@ -28,7 +28,7 @@ def refit_frozen(scenario, cfg):
 
 
 # G: gradual drift
-print("=== Stress G: gradual/drift shift (ramp_len=100), gaussian_dense frozen fit ===")
+print("Stress G: gradual/drift shift (ramp_len=100), gaussian_dense frozen fit ")
 cfg = SCENARIOS["gaussian_dense"]
 frozen = refit_frozen("gaussian_dense", cfg)
 for name, (prof, thr, score_fn) in frozen.items():
@@ -42,7 +42,7 @@ for name, (prof, thr, score_fn) in frozen.items():
     rows.append(["G_gradual_drift", name, None, None, p_, se_prop(p_, B_EVAL), pw["mean_delay"], pw["median_delay"]])
 
 # H: rarer/larger contamination
-print("=== Stress H: rarer/larger contamination (prob=0.01, scale=15), contaminated_dense frozen fit ===")
+print(" Stress H: rarer/larger contamination (prob=0.01, scale=15), contaminated_dense frozen fit ")
 cfg = SCENARIOS["contaminated_dense"]
 frozen = refit_frozen("contaminated_dense", cfg)
 for name, (prof, thr, score_fn) in frozen.items():
