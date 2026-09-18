@@ -1,4 +1,4 @@
-# Prints LaTeX table body rows for every numeric table in the paper.
+
 import os
 import pandas as pd
 import numpy as np
@@ -31,7 +31,7 @@ for scen in SCEN_ORDER:
         row.append(f"{float(r.power.iloc[0]):.3f}" if len(r) else "--")
     print(" & ".join(row) + r" \\")
 
-print("\n", "=" * 70, "\nTABLE: Experiment A full (FA(SE) / power(SE)) -- appendix\n", "=" * 70)
+print("\n", "=" * 70, "\nTABLE: Experiment A full (FA(SE) / power(SE))  appendix\n", "=" * 70)
 for scen in SCEN_ORDER:
     for m in METHOD_ORDER:
         r = expA[(expA.scenario == scen) & (expA.method == m)]
