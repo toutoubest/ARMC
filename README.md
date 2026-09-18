@@ -34,15 +34,3 @@ ARMC is a sequential monitoring method for high-dimensional data streams. It com
 - `diag_task1_heavytail.py` — Heavy-tail and contamination diagnostics.
 - `diag_task1_cusum_level.py` — CUSUM-level diagnostics.
 
-### Paper output
-
-- `make_paper_tables.py` — Generates numerical summaries for the manuscript tables.
-- `make_paper_figures.py` — Generates simulation figures for the manuscript.
-
-### Waymo application
-
-- `waymo_pb_lite.py` — Reads Waymo Scenario TFRecord files.
-- `run_waymo_pipeline.py` — Constructs trajectory residuals and applies ARMC v3.1.
-- `primary_analysis_10shard.py` — Primary ten-shard leave-one-shard-out analysis.
-- `make_primary_figures_10shard.py` — Generates figures for the Waymo analysis.
-
