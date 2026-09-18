@@ -49,7 +49,7 @@ def seeds_for(scenario):
                 fa_eval=90000 + 13 * i, power_eval=95000 + 13 * i)
 
 
-# ---- per-method scoring interface: fit(profile) -> prof ; score(X, prof) -> (B,T) scores
+# per-method scoring interface: fit(profile) -> prof ; score(X, prof) -> (B,T) scores
 def fit_standard(scenario, cfg, B_profile, seed):
     return None  # no profiling needed
 
