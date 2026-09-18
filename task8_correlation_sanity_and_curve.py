@@ -9,7 +9,7 @@ from methods_v3 import (
 )
 from methods_v3_1 import DEFAULT_HP_V31, fit_profile_v31_hier, combined_scores_v31_hier
 
-# ---- (a) sanity check: large-sample marginal mean/var pre vs post tau ----
+#  (a) sanity check: large-sample marginal mean/var pre vs post tau 
 p = 20
 rng = np.random.default_rng(800001)
 B_CHECK = 8000
@@ -32,7 +32,7 @@ def lag1_corr(block):
 pre_lag1 = lag1_corr(pre)
 post_lag1 = lag1_corr(post)
 
-print("=== Task 8(a): correlation_shift marginal sanity check (B=8000) ===")
+print(" Task 8(a): correlation_shift marginal sanity check (B=8000) ")
 print(f"pre-tau  mean: min={pre_mean.min():.4f} max={pre_mean.max():.4f} mean-of-means={pre_mean.mean():.4f}")
 print(f"post-tau mean: min={post_mean.min():.4f} max={post_mean.max():.4f} mean-of-means={post_mean.mean():.4f}")
 print(f"pre-tau  var:  min={pre_var.min():.4f} max={pre_var.max():.4f} mean={pre_var.mean():.4f}")
@@ -48,7 +48,7 @@ with open("task8_correlation_sanity.csv", "w", newline="") as f:
 print("wrote task8_correlation_sanity.csv")
 
 # ---- (b) weaker correlation-shift power curve, v3 vs v3.1 ----
-print("\n=== Task 8(b): weaker correlation-shift power curve ===")
+print("\n Task 8(b): weaker correlation-shift power curve ")
 B_PROFILE, B_CAL, B_EVAL = 2000, 2000, 1500
 SEED_PROFILE, SEED_CAL = 210000, 220000
 SEED_EVAL_BASE = 230000
