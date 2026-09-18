@@ -1,5 +1,5 @@
-# Generates every figure in the paper from the result CSVs in data/,
-# writing PDF figures into figures/.
+# Generates every figure 
+
 import os
 import numpy as np
 import pandas as pd
