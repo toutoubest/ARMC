@@ -1,20 +1,4 @@
-# ARMC v3.1 (Adaptive Robust Multiscale CUSUM): a standalone,
-# dependency-light wrapper around the method in core_v3.py /
-# methods_v3.py / methods_v3_1.py, for scoring real residual sequences.
-#
-# Each coordinate is robustly standardized (median/MAD) over an
-# in-control reference window, then huberized. Four CUSUM channels are
-# tracked: dense and sparse location (mean shifts, broad vs.
-# concentrated), and scale and dependence (variance inflation and
-# lag-1 correlation change). Each channel is null-calibrated to a
-# z-score, combined within family (dense/sparse; scale/dependence),
-# then combined across families (location vs. dispersion) with an
-# asymmetric allowance. The resulting global score is thresholded to a
-# target false-alarm rate (default alpha=0.05).
-#
-# v3.1 differs from v3 only in the scale/dependence raw features:
-# clip-then-square / clip-then-multiply at c_disp=1.345, instead of
-# v3's wider effective clip radius.
+# ARMC v3.1: Adaptive Robust Multiscale CUSUM
 
 from dataclasses import dataclass, field
 import numpy as np
